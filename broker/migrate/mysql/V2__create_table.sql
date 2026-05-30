@@ -72,7 +72,7 @@ CREATE TABLE `t_user` (
   `_display_name` varchar(64) DEFAULT '',
   `_gender` int(11) NOT NULL DEFAULT 0,
   `_portrait` varchar(1024) DEFAULT '',
-  `_mobile` varchar(64) DEFAULT '',
+  `_mobile` varchar(64) DEFAULT NULL,
   `_email` varchar(64) DEFAULT '',
   `_address` varchar(64) DEFAULT '',
   `_company` varchar(64) DEFAULT '',
@@ -85,7 +85,7 @@ CREATE TABLE `t_user` (
   UNIQUE INDEX `user_uid_index` (`_uid` ASC),
   UNIQUE INDEX `user_name_index` (`_name` ASC),
   INDEX `user_display_name_index` (`_display_name` ASC),
-  INDEX `user_mobile_index` (`_mobile` ASC),
+  UNIQUE INDEX `user_mobile_index` (`_mobile` ASC),
   INDEX `user_email_index` (`_email` ASC)
 )
 ENGINE = InnoDB
